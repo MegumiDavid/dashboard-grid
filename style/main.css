@@ -1,0 +1,77 @@
+.grid {
+  padding-left: 0;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: grid;
+  grid-template-rows: 15vh 25vh 25vh 25vh;
+  grid-template-columns: 100px repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-template-areas: "sidebar cards     cards leftBar" "sidebar liPacient notes leftBar" "sidebar liPacient notes leftBar" "sidebar graph     graph leftBar";
+}
+@media only screen and (max-width: 900px) {
+  .grid {
+    grid-template-columns: 100px repeat(2, 1fr);
+    grid-gap: 15px;
+    grid-template-areas: "sidebar cards     leftBar" "sidebar liPacient leftBar" "sidebar notes     leftBar" "sidebar graph     leftBar";
+  }
+}
+@media only screen and (max-width: 800px) {
+  .grid {
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: 10vh repeat(4, 25vh);
+    grid-gap: 12.5px;
+    grid-template-areas: "sidebar cards" "sidebar leftBar" "sidebar liPacient" "sidebar notes" "sidebar graph";
+  }
+}
+@media only screen and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh repeat(5, 25vh);
+    grid-template-areas: "sidebar" "cards" "leftBar" "liPacient" "notes" "graph";
+  }
+}
+
+.sidebar,
+.cards,
+.liPacient,
+.graph,
+.notes,
+.leftBar {
+  border-radius: 16px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: cadetblue;
+}
+
+.cards {
+  grid-area: cards;
+  background-color: cadetblue;
+  background-color: pink;
+}
+
+.liPacient {
+  grid-area: liPacient;
+  background-color: cadetblue;
+  background-color: cyan;
+}
+
+.graph {
+  grid-area: graph;
+  background-color: cadetblue;
+  background-color: chartreuse;
+}
+
+.notes {
+  grid-area: notes;
+  background-color: cadetblue;
+  background-color: cornflowerblue;
+}
+
+.leftBar {
+  grid-area: leftBar;
+  background-color: cadetblue;
+  background-color: coral;
+}/*# sourceMappingURL=main.css.map */
