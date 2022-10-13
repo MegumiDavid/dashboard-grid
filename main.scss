@@ -2,11 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    scrollbar-width: thin;
+    scrollbar-color: #99bfcf #dedede;
+    scroll-behavior: smooth;
 }
 
 html {
     font-size: 62.5%; 
-    scroll-behavior: smooth;
 
     @media only screen and (max-width: 1130px) {
         font-size: 59.5%;
@@ -37,13 +40,13 @@ $dark-blue: #449BC0;
 $dark-red: #FF7E7E;
 
 .grid {
+    padding: 2rem 2rem 0rem 0rem;
     padding-left: 0;
-    padding-right: .5rem;
     display: grid;
     grid-template-rows: 
-        10vh 28.5vh 28.5vh 28.5vh;
+        minmax(10vh, 100px) 28.5vh 28.5vh 28.5vh;
     grid-template-columns: 
-        100px repeat(3, 1fr);
+        120px repeat(3, 1fr);
     grid-gap: 20px;
     grid-template-areas: "sidebar cards     cards leftBar"
                          "sidebar liPacient notes leftBar"
@@ -104,10 +107,13 @@ $dark-red: #FF7E7E;
     grid-area: sidebar;
     background-color: $light-blue;
     border-radius: 0 16px 16px 0;
+    min-height: 100.5vh;
+    transform: translateY(-1.1%);
+    
 
     .circle {
         margin: 0 auto;
-        margin-top: 1rem;
+        margin-top: 2rem;
         border-radius: 50%;
         width: 7.5rem;
         height: 7.5rem;
@@ -158,13 +164,13 @@ $dark-red: #FF7E7E;
 
     @media only screen and (max-width: 500px) {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 100px);
+        grid-template-rows: repeat(2, minmax(10vh,100px));
     }
 
     .square {
         border-radius: 9px;
-        width: 5rem;
-        height: 5rem;
+        width:  6rem;
+        height: 6rem;
         background-color: white;
         display: flex;
         align-items: center;
@@ -197,11 +203,28 @@ $dark-red: #FF7E7E;
 .liPacient {
     grid-area: liPacient;
     background-color: white;
+    padding-right: 1rem;
     
     .pacientWrapper {
-        overflow: auto;
+        overflow-Y: auto;
         height: 85%;
         padding-bottom: .5rem;
+        padding-right: 1rem;
+
+          /* Chrome, Edge, and Safari */
+            &::-webkit-scrollbar {
+                width: 6px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: #dedede;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: #99bfcf;
+                border-radius: 7px;
+                border: 0px solid #ffffff;
+            }
     }
 
     .h2 {
@@ -211,19 +234,20 @@ $dark-red: #FF7E7E;
         margin-bottom: 2rem;
         padding: 2.5%;
         padding-top: 5%;
+        margin-left: 1.5rem;
     }
 
     .pacient {
         width: 95%;
-        height: 8rem;
         background-color: $light-blue;
         margin: 0 2.5%;
         border-radius: 16px;
-        margin-bottom: 1rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1rem;
+        min-height: 10rem;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
         
         .wrapper {
             display: flex;
@@ -277,13 +301,17 @@ $dark-red: #FF7E7E;
 .graph {
     grid-area: graph;
     background-color: cadetblue;
-    background-color: chartreuse;
+    
+    background-image: url('../grafic.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .notes {
     grid-area: notes;
     background-color: $light-blue;
-    padding-bottom: 2rem;
+    padding-right: 1rem;
     .h2 {
         font-weight: 700;
         font-size: 1.6rem;
@@ -291,25 +319,105 @@ $dark-red: #FF7E7E;
         margin-bottom: 2rem;
         padding: 2.5%;
         padding-top: 5%;
+        margin-left: 1.5rem;
     }
 
     .notesWrapper {
-        overflow: auto;
-        height: 85%;
+        overflow-Y: auto;
+        max-height: 85%;
+        padding-bottom: .5rem;
+        padding-right: 1rem;
+
+
+  /* Chrome, Edge, and Safari */
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #dedede;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #99bfcf;
+        border-radius: 7px;
+        border: 0px solid #ffffff;
+    }
 
         .note {
-            width: 95%;
-            height: 8rem;
             background-color: white;
             border-left: 15px solid $dark-red;
+            
+            width: 95%;
             margin: 0 2.5%;
             border-radius: 16px;
-            margin-bottom: 1rem;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 1rem;
+            min-height: 10rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+
+            min-height: 10rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
             
+            .wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                .title {
+                    font-weight: 700;
+                    font-size: 1.6rem;
+                    color: $grey;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -25%;
+                        left: 0;
+                        width: 200%;
+                        height: .5px;
+                        background-color: $grey;
+                        align-self: flex-start;
+
+                        background: #D9D9D9;
+                        border-radius: 107px;
+                    }
+                }
+
+                .btn {
+                    border: 2px solid $dark-blue;
+                    border-radius: 50%;
+                    width:  2.4rem;
+                    height: 2.4rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgb(0, 0, 0, 0);
+                    cursor: pointer;
+                    padding: 1.2rem;
+        
+                    .dots {
+                        color: $dark-blue;
+                        font-size: 2rem;
+                        transform: translateY(-20%);
+                    }
+                }
+            }
+
+            /* .line {width: 50%; height: .5px; background-color: $grey; align-self: flex-start;} */
+
+            .desc {
+                font-size: 1.6rem;
+                font-weight: 700;
+                color: $grey;
+                text-align: center;
+                padding-top: 1rem;
+            }
         }
     }
 
@@ -317,6 +425,166 @@ $dark-red: #FF7E7E;
 
 .leftBar {
     grid-area: leftBar;
-    background-color: cadetblue;
-    background-color: coral;
+    background-color: $light-blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //justify-content: center;
+
+    .h2 {
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: $grey;
+        margin-bottom: 2rem;
+        padding: 2.5%;
+        padding-top: 5%;
+        width: 85%;
+    }
+
+    .wrapperSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        justify-content: space-around;
+    }
+
+    .calender {
+        width: 85%;
+        height: 30rem;
+        background: #FFFFFF;
+        border-radius: 24px;
+    }
+
+    .events {
+        overflow-Y: auto;
+        width: 87.5%;
+        max-height: 25%;
+        padding-bottom: .5rem;
+        padding-right: 1rem;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #dedede;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #99bfcf;
+            border-radius: 7px;
+            border: 0px solid #ffffff;
+        }
+
+        .event {
+            background-color: white;
+            border-left: 15px solid $dark-red;
+            
+            width: 95%;
+            margin: 0 2.5%;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 10rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+
+            min-height: 10rem;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+
+            .wrapperDesc {
+                display: flex;
+                align-items: left;
+                // justify-content: space-between;
+                flex-direction: column;
+                // justify-content: space-between;
+                width: 100%;
+
+                .title {
+                    font-weight: 700;
+                    font-size: 1.6rem;
+                    color: $grey;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -25%;
+                        left: 0;
+                        width: 50%;
+                        height: .5px;
+                        background-color: $grey;
+                        align-self: flex-start;
+
+                        background: #D9D9D9;
+                        border-radius: 107px;
+                    }
+                }             
+
+                .desc {
+                    font-size: 1.6rem;
+                    font-weight: 700;
+                    color: $grey;
+                    text-align: left;
+                    padding-top: 1rem;
+                    word-break: break-word;
+                }
+            }
+
+            .wrapperDate {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .date, .dateNumber {
+                    font-weight: 700;
+                    font-size: 2rem;
+                    color: $grey;
+                }
+            }
+
+        }
+    }
+
+    .newProgram {
+        background-color: $dark-blue;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        
+        justify-content: space-between;
+        padding: 1.5rem 2rem;
+        border-radius: 16px;
+        border: none;
+        width:  max-content;
+
+        .circle {
+            margin: 0 auto;
+            border-radius: 50%;
+            width: 7rem;
+            height: 7rem;
+            background-color: white;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            
+            i {
+                font-size: 6rem;
+                color: $light-blue;
+            }
+        }
+
+        .btnText {
+            font-weight: 400;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #FFFFFF;
+            word-break: break-all;
+            margin-left: 1rem;
+        }
+    }
 }

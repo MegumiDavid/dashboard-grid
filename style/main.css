@@ -2,11 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #99bfcf #dedede;
+  scroll-behavior: smooth;
 }
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 @media only screen and (max-width: 1130px) {
   html {
@@ -29,11 +31,11 @@ body {
 }
 
 .grid {
+  padding: 2rem 2rem 0rem 0rem;
   padding-left: 0;
-  padding-right: 0.5rem;
   display: grid;
-  grid-template-rows: 10vh 28.5vh 28.5vh 28.5vh;
-  grid-template-columns: 100px repeat(3, 1fr);
+  grid-template-rows: minmax(10vh, 100px) 28.5vh 28.5vh 28.5vh;
+  grid-template-columns: 120px repeat(3, 1fr);
   grid-gap: 20px;
   grid-template-areas: "sidebar cards     cards leftBar" "sidebar liPacient notes leftBar" "sidebar liPacient notes leftBar" "sidebar graph     graph leftBar";
 }
@@ -73,10 +75,12 @@ body {
   grid-area: sidebar;
   background-color: #DBEFFA;
   border-radius: 0 16px 16px 0;
+  min-height: 100.5vh;
+  transform: translateY(-1.1%);
 }
 .sidebar .circle {
   margin: 0 auto;
-  margin-top: 1rem;
+  margin-top: 2rem;
   border-radius: 50%;
   width: 7.5rem;
   height: 7.5rem;
@@ -131,13 +135,13 @@ body {
 @media only screen and (max-width: 500px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 100px);
+    grid-template-rows: repeat(2, minmax(10vh, 100px));
   }
 }
 .cards .square {
   border-radius: 9px;
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   background-color: white;
   display: flex;
   align-items: center;
@@ -165,11 +169,25 @@ body {
 .liPacient {
   grid-area: liPacient;
   background-color: white;
+  padding-right: 1rem;
 }
 .liPacient .pacientWrapper {
-  overflow: auto;
+  overflow-Y: auto;
   height: 85%;
   padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  /* Chrome, Edge, and Safari */
+}
+.liPacient .pacientWrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.liPacient .pacientWrapper::-webkit-scrollbar-track {
+  background: #dedede;
+}
+.liPacient .pacientWrapper::-webkit-scrollbar-thumb {
+  background-color: #99bfcf;
+  border-radius: 7px;
+  border: 0px solid #ffffff;
 }
 .liPacient .h2 {
   font-weight: 700;
@@ -178,18 +196,19 @@ body {
   margin-bottom: 2rem;
   padding: 2.5%;
   padding-top: 5%;
+  margin-left: 1.5rem;
 }
 .liPacient .pacient {
   width: 95%;
-  height: 8rem;
   background-color: #DBEFFA;
   margin: 0 2.5%;
   border-radius: 16px;
-  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  min-height: 10rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
 }
 .liPacient .pacient .wrapper {
   display: flex;
@@ -235,13 +254,16 @@ body {
 .graph {
   grid-area: graph;
   background-color: cadetblue;
-  background-color: chartreuse;
+  background-image: url("../grafic.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .notes {
   grid-area: notes;
   background-color: #DBEFFA;
-  padding-bottom: 2rem;
+  padding-right: 1rem;
 }
 .notes .h2 {
   font-weight: 700;
@@ -250,27 +272,231 @@ body {
   margin-bottom: 2rem;
   padding: 2.5%;
   padding-top: 5%;
+  margin-left: 1.5rem;
 }
 .notes .notesWrapper {
-  overflow: auto;
-  height: 85%;
+  overflow-Y: auto;
+  max-height: 85%;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+  /* Chrome, Edge, and Safari */
+}
+.notes .notesWrapper::-webkit-scrollbar {
+  width: 6px;
+}
+.notes .notesWrapper::-webkit-scrollbar-track {
+  background: #dedede;
+}
+.notes .notesWrapper::-webkit-scrollbar-thumb {
+  background-color: #99bfcf;
+  border-radius: 7px;
+  border: 0px solid #ffffff;
 }
 .notes .notesWrapper .note {
-  width: 95%;
-  height: 8rem;
   background-color: white;
   border-left: 15px solid #FF7E7E;
+  width: 95%;
   margin: 0 2.5%;
   border-radius: 16px;
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 10rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  min-height: 10rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  /* .line {width: 50%; height: .5px; background-color: $grey; align-self: flex-start;} */
+}
+.notes .notesWrapper .note .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  width: 100%;
+}
+.notes .notesWrapper .note .wrapper .title {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #78746D;
+  position: relative;
+}
+.notes .notesWrapper .note .wrapper .title::after {
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  left: 0;
+  width: 200%;
+  height: 0.5px;
+  background-color: #78746D;
+  align-self: flex-start;
+  background: #D9D9D9;
+  border-radius: 107px;
+}
+.notes .notesWrapper .note .wrapper .btn {
+  border: 2px solid #449BC0;
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  padding: 1.2rem;
+}
+.notes .notesWrapper .note .wrapper .btn .dots {
+  color: #449BC0;
+  font-size: 2rem;
+  transform: translateY(-20%);
+}
+.notes .notesWrapper .note .desc {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #78746D;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .leftBar {
   grid-area: leftBar;
-  background-color: cadetblue;
-  background-color: coral;
+  background-color: #DBEFFA;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.leftBar .h2 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #78746D;
+  margin-bottom: 2rem;
+  padding: 2.5%;
+  padding-top: 5%;
+  width: 85%;
+}
+.leftBar .wrapperSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+}
+.leftBar .calender {
+  width: 85%;
+  height: 30rem;
+  background: #FFFFFF;
+  border-radius: 24px;
+}
+.leftBar .events {
+  overflow-Y: auto;
+  width: 87.5%;
+  max-height: 25%;
+  padding-bottom: 0.5rem;
+  padding-right: 1rem;
+}
+.leftBar .events::-webkit-scrollbar {
+  width: 6px;
+}
+.leftBar .events::-webkit-scrollbar-track {
+  background: #dedede;
+}
+.leftBar .events::-webkit-scrollbar-thumb {
+  background-color: #99bfcf;
+  border-radius: 7px;
+  border: 0px solid #ffffff;
+}
+.leftBar .events .event {
+  background-color: white;
+  border-left: 15px solid #FF7E7E;
+  width: 95%;
+  margin: 0 2.5%;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 10rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  min-height: 10rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+}
+.leftBar .events .event .wrapperDesc {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  width: 100%;
+}
+.leftBar .events .event .wrapperDesc .title {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #78746D;
+  position: relative;
+}
+.leftBar .events .event .wrapperDesc .title::after {
+  content: "";
+  position: absolute;
+  bottom: -25%;
+  left: 0;
+  width: 50%;
+  height: 0.5px;
+  background-color: #78746D;
+  align-self: flex-start;
+  background: #D9D9D9;
+  border-radius: 107px;
+}
+.leftBar .events .event .wrapperDesc .desc {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #78746D;
+  text-align: left;
+  padding-top: 1rem;
+  word-break: break-word;
+}
+.leftBar .events .event .wrapperDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.leftBar .events .event .wrapperDate .date, .leftBar .events .event .wrapperDate .dateNumber {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #78746D;
+}
+.leftBar .newProgram {
+  background-color: #449BC0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-radius: 16px;
+  border: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.leftBar .newProgram .circle {
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+  background-color: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.leftBar .newProgram .circle i {
+  font-size: 6rem;
+  color: #DBEFFA;
+}
+.leftBar .newProgram .btnText {
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-align: center;
+  color: #FFFFFF;
+  word-break: break-all;
+  margin-left: 1rem;
 }/*# sourceMappingURL=main.css.map */
