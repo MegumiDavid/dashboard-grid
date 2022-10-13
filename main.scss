@@ -19,23 +19,32 @@ html {
     }
 }
 
+body {
+    font-family: sans-serif;
+}
+
 $light-green: #DCFADB;
 $light-purple: #DBE2FA;
 $light-yellow: #FAEFDB;
 $light-red: #FADBE2;
+$light-blue: #DBEFFA;
+$middle-green: #76E072;
+$middle-blue: #86A1FF;
+$middle-yellow: #FFC761;
+$middle-red: #FFBDCD;
+$grey: #78746D;
+$dark-blue: #449BC0;
+$dark-red: #FF7E7E;
 
 .grid {
     padding-left: 0;
     padding-right: .5rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
     display: grid;
     grid-template-rows: 
         10vh 28.5vh 28.5vh 28.5vh;
     grid-template-columns: 
         100px repeat(3, 1fr);
     grid-gap: 20px;
-    // grid-auto-flow: column;
     grid-template-areas: "sidebar cards     cards leftBar"
                          "sidebar liPacient notes leftBar"
                          "sidebar liPacient notes leftBar"
@@ -69,14 +78,15 @@ $light-red: #FADBE2;
     @media only screen and (max-width: 500px) {
         grid-template-columns: 1fr;
         grid-template-rows: 
-            10vh repeat(5, 25vh);
-        // grid-gap: 5px;
+            25vh 210px repeat(4, 35vh);
         grid-template-areas: "sidebar"
                              "cards"
                              "leftBar"
                              "liPacient"
                              "notes"
                              "graph";
+
+                             
     }   
 }
 
@@ -92,12 +102,31 @@ $light-red: #FADBE2;
 
 .sidebar {
     grid-area: sidebar;
-    background-color: cadetblue;
+    background-color: $light-blue;
+    border-radius: 0 16px 16px 0;
+
+    .circle {
+        margin: 0 auto;
+        margin-top: 1rem;
+        border-radius: 50%;
+        width: 7.5rem;
+        height: 7.5rem;
+        background-color: white;
+        padding: 0rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        
+        i {
+            font-size: 6rem;
+            color: $light-blue;
+        }
+    }
 }
 
 .cards {
     grid-area: cards;
-    
+    margin-top: 1rem;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -105,17 +134,144 @@ $light-red: #FADBE2;
 
     .card {
         border-radius: 1.6rem;
-        &1 {background-color: $light-green;}
-        &2 {background-color: $light-purple;}
-        &3 {background-color: $light-yellow;}
-        &4 {background-color: $light-red;}
+        &1 {
+            background-color: $light-green;
+            i {color: $middle-green;}
+        }
+        &2 {
+            background-color: $light-purple;
+            i {color: $middle-blue;}
+        }
+        &3 {
+            background-color: $light-yellow;
+            i {color: $middle-yellow;}
+        }
+        &4 {
+            background-color: $light-red;
+            i {color: $middle-red;}
+        }
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    @media only screen and (max-width: 500px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 100px);
+    }
+
+    .square {
+        border-radius: 9px;
+        width: 5rem;
+        height: 5rem;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            font-size: 2.5rem;
+        }
+    }
+
+    .desc {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .number {
+            font-size: 3.2rem;
+            color: black;
+            font-weight: 500;   
+        }
+        
+        .title {
+            color: $grey;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
     }
 }
 
 .liPacient {
     grid-area: liPacient;
-    background-color: cadetblue;
-    background-color: cyan;
+    background-color: white;
+    
+    .pacientWrapper {
+        overflow: auto;
+        height: 85%;
+        padding-bottom: .5rem;
+    }
+
+    .h2 {
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: $grey;
+        margin-bottom: 2rem;
+        padding: 2.5%;
+        padding-top: 5%;
+    }
+
+    .pacient {
+        width: 95%;
+        height: 8rem;
+        background-color: $light-blue;
+        margin: 0 2.5%;
+        border-radius: 16px;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        
+        .wrapper {
+            display: flex;
+            align-items: center;
+
+            .circle {
+                width: 5rem;
+                height: 5rem;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                background-color: white;
+    
+                i {
+                    font-size: 4rem;
+                    color: $light-blue;
+                }
+            }
+    
+            .name {
+                margin-left: 1.5rem;
+                font-weight: 700;
+                font-size: 1.6rem;
+                color: $grey;
+            }
+        }
+
+
+        .btn {
+            border: 2px solid $dark-blue;
+            border-radius: 50%;
+            width:  2.4rem;
+            height: 2.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(0, 0, 0, 0);
+            cursor: pointer;
+            padding: 1.2rem;
+
+            .dots {
+                color: $dark-blue;
+                font-size: 2rem;
+                transform: translateY(-20%);
+            }
+        }
+    }
 }
 
 .graph {
@@ -126,8 +282,37 @@ $light-red: #FADBE2;
 
 .notes {
     grid-area: notes;
-    background-color: cadetblue;
-    background-color: cornflowerblue;
+    background-color: $light-blue;
+    padding-bottom: 2rem;
+    .h2 {
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: $grey;
+        margin-bottom: 2rem;
+        padding: 2.5%;
+        padding-top: 5%;
+    }
+
+    .notesWrapper {
+        overflow: auto;
+        height: 85%;
+
+        .note {
+            width: 95%;
+            height: 8rem;
+            background-color: white;
+            border-left: 15px solid $dark-red;
+            margin: 0 2.5%;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            
+        }
+    }
+
 }
 
 .leftBar {

@@ -24,11 +24,13 @@ html {
   }
 }
 
+body {
+  font-family: sans-serif;
+}
+
 .grid {
   padding-left: 0;
   padding-right: 0.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   display: grid;
   grid-template-rows: 10vh 28.5vh 28.5vh 28.5vh;
   grid-template-columns: 100px repeat(3, 1fr);
@@ -53,7 +55,7 @@ html {
 @media only screen and (max-width: 500px) {
   .grid {
     grid-template-columns: 1fr;
-    grid-template-rows: 10vh repeat(5, 25vh);
+    grid-template-rows: 25vh 210px repeat(4, 35vh);
     grid-template-areas: "sidebar" "cards" "leftBar" "liPacient" "notes" "graph";
   }
 }
@@ -69,35 +71,165 @@ html {
 
 .sidebar {
   grid-area: sidebar;
-  background-color: cadetblue;
+  background-color: #DBEFFA;
+  border-radius: 0 16px 16px 0;
+}
+.sidebar .circle {
+  margin: 0 auto;
+  margin-top: 1rem;
+  border-radius: 50%;
+  width: 7.5rem;
+  height: 7.5rem;
+  background-color: white;
+  padding: 0rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.sidebar .circle i {
+  font-size: 6rem;
+  color: #DBEFFA;
 }
 
 .cards {
   grid-area: cards;
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.5em;
 }
 .cards .card {
   border-radius: 1.6rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 .cards .card1 {
   background-color: #DCFADB;
 }
+.cards .card1 i {
+  color: #76E072;
+}
 .cards .card2 {
   background-color: #DBE2FA;
+}
+.cards .card2 i {
+  color: #86A1FF;
 }
 .cards .card3 {
   background-color: #FAEFDB;
 }
+.cards .card3 i {
+  color: #FFC761;
+}
 .cards .card4 {
   background-color: #FADBE2;
+}
+.cards .card4 i {
+  color: #FFBDCD;
+}
+@media only screen and (max-width: 500px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 100px);
+  }
+}
+.cards .square {
+  border-radius: 9px;
+  width: 5rem;
+  height: 5rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards .square i {
+  font-size: 2.5rem;
+}
+.cards .desc {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.cards .desc .number {
+  font-size: 3.2rem;
+  color: black;
+  font-weight: 500;
+}
+.cards .desc .title {
+  color: #78746D;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 .liPacient {
   grid-area: liPacient;
-  background-color: cadetblue;
-  background-color: cyan;
+  background-color: white;
+}
+.liPacient .pacientWrapper {
+  overflow: auto;
+  height: 85%;
+  padding-bottom: 0.5rem;
+}
+.liPacient .h2 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #78746D;
+  margin-bottom: 2rem;
+  padding: 2.5%;
+  padding-top: 5%;
+}
+.liPacient .pacient {
+  width: 95%;
+  height: 8rem;
+  background-color: #DBEFFA;
+  margin: 0 2.5%;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.liPacient .pacient .wrapper {
+  display: flex;
+  align-items: center;
+}
+.liPacient .pacient .wrapper .circle {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: white;
+}
+.liPacient .pacient .wrapper .circle i {
+  font-size: 4rem;
+  color: #DBEFFA;
+}
+.liPacient .pacient .wrapper .name {
+  margin-left: 1.5rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #78746D;
+}
+.liPacient .pacient .btn {
+  border: 2px solid #449BC0;
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+  padding: 1.2rem;
+}
+.liPacient .pacient .btn .dots {
+  color: #449BC0;
+  font-size: 2rem;
+  transform: translateY(-20%);
 }
 
 .graph {
@@ -108,8 +240,33 @@ html {
 
 .notes {
   grid-area: notes;
-  background-color: cadetblue;
-  background-color: cornflowerblue;
+  background-color: #DBEFFA;
+  padding-bottom: 2rem;
+}
+.notes .h2 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #78746D;
+  margin-bottom: 2rem;
+  padding: 2.5%;
+  padding-top: 5%;
+}
+.notes .notesWrapper {
+  overflow: auto;
+  height: 85%;
+}
+.notes .notesWrapper .note {
+  width: 95%;
+  height: 8rem;
+  background-color: white;
+  border-left: 15px solid #FF7E7E;
+  margin: 0 2.5%;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
 .leftBar {
