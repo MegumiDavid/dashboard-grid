@@ -1,3 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; 
+    scroll-behavior: smooth;
+
+    @media only screen and (max-width: 1130px) {
+        font-size: 59.5%;
+    }
+    @media only screen and (max-width: 750px) {
+        font-size: 52.5%;
+    }
+    @media only screen and (max-width: 500px) {
+        font-size: 50.5%;
+    }
+}
+
+$light-green: #DCFADB;
+$light-purple: #DBE2FA;
+$light-yellow: #FAEFDB;
+$light-red: #FADBE2;
+
 .grid {
     padding-left: 0;
     padding-right: .5rem;
@@ -5,7 +31,7 @@
     padding-bottom: .5rem;
     display: grid;
     grid-template-rows: 
-        15vh 25vh 25vh 25vh;
+        10vh 28.5vh 28.5vh 28.5vh;
     grid-template-columns: 
         100px repeat(3, 1fr);
     grid-gap: 20px;
@@ -71,8 +97,19 @@
 
 .cards {
     grid-area: cards;
-    background-color: cadetblue;
-    background-color: pink;
+    
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+
+    .card {
+        border-radius: 1.6rem;
+        &1 {background-color: $light-green;}
+        &2 {background-color: $light-purple;}
+        &3 {background-color: $light-yellow;}
+        &4 {background-color: $light-red;}
+    }
 }
 
 .liPacient {

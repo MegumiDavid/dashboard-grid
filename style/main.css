@@ -1,10 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+@media only screen and (max-width: 1130px) {
+  html {
+    font-size: 59.5%;
+  }
+}
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 52.5%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 50.5%;
+  }
+}
+
 .grid {
   padding-left: 0;
   padding-right: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   display: grid;
-  grid-template-rows: 15vh 25vh 25vh 25vh;
+  grid-template-rows: 10vh 28.5vh 28.5vh 28.5vh;
   grid-template-columns: 100px repeat(3, 1fr);
   grid-gap: 20px;
   grid-template-areas: "sidebar cards     cards leftBar" "sidebar liPacient notes leftBar" "sidebar liPacient notes leftBar" "sidebar graph     graph leftBar";
@@ -48,8 +74,24 @@
 
 .cards {
   grid-area: cards;
-  background-color: cadetblue;
-  background-color: pink;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5em;
+}
+.cards .card {
+  border-radius: 1.6rem;
+}
+.cards .card1 {
+  background-color: #DCFADB;
+}
+.cards .card2 {
+  background-color: #DBE2FA;
+}
+.cards .card3 {
+  background-color: #FAEFDB;
+}
+.cards .card4 {
+  background-color: #FADBE2;
 }
 
 .liPacient {
