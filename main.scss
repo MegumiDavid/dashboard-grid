@@ -40,14 +40,14 @@ $dark-blue: #449BC0;
 $dark-red: #FF7E7E;
 
 .grid {
-    padding: 2rem 2rem 0rem 0rem;
+    padding: 1.5rem 1.5rem 1.5rem 0rem;
     padding-left: 0;
     display: grid;
     grid-template-rows: 
-        minmax(10vh, 100px) 28.5vh 28.5vh 28.5vh;
+        minmax(10vh, 100px) repeat(2, minmax(200px,15vh)) minmax(200px, 20vh);
     grid-template-columns: 
         120px repeat(3, 1fr);
-    grid-gap: 20px;
+    grid-gap: 3rem;
     grid-template-areas: "sidebar cards     cards leftBar"
                          "sidebar liPacient notes leftBar"
                          "sidebar liPacient notes leftBar"
@@ -122,10 +122,11 @@ $dark-red: #FF7E7E;
         display: flex;
         align-items: flex-end;
         justify-content: center;
+        overflow: hidden;
         
-        i {
-            font-size: 6rem;
-            color: $light-blue;
+        img {
+            height: 100%;
+            width: auto;
         }
     }
 }
@@ -207,7 +208,7 @@ $dark-red: #FF7E7E;
     
     .pacientWrapper {
         overflow-Y: auto;
-        height: 85%;
+        height: 80%;
         padding-bottom: .5rem;
         padding-right: 1rem;
 
@@ -300,7 +301,6 @@ $dark-red: #FF7E7E;
 
 .graph {
     grid-area: graph;
-    background-color: cadetblue;
     
     background-image: url('../grafic.png');
     background-position: center;
@@ -324,7 +324,7 @@ $dark-red: #FF7E7E;
 
     .notesWrapper {
         overflow-Y: auto;
-        max-height: 85%;
+        max-height: 75%;
         padding-bottom: .5rem;
         padding-right: 1rem;
 
@@ -359,7 +359,7 @@ $dark-red: #FF7E7E;
             margin-bottom: 1.5rem;
             padding: 1.5rem;
 
-            min-height: 10rem;
+            min-height: 8rem;
             margin-bottom: 1.5rem;
             padding: 1.5rem;
             
@@ -446,16 +446,21 @@ $dark-red: #FF7E7E;
         flex-direction: column;
         align-items: center;
         width: 100%;
-        height: 100%;
+        height: 90%;
 
         justify-content: space-around;
     }
 
     .calender {
         width: 85%;
-        height: 30rem;
+        min-height: 28.5rem;
         background: #FFFFFF;
         border-radius: 24px;
+    
+        background-image: url('../calendario.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .events {
@@ -489,7 +494,7 @@ $dark-red: #FF7E7E;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            min-height: 10rem;
+            min-height: 8rem;
             margin-bottom: 1.5rem;
             padding: 1.5rem;
 
@@ -562,21 +567,21 @@ $dark-red: #FF7E7E;
         border: none;
         width:  max-content;
 
-        .circle {
+        /* .circle {
             margin: 0 auto;
             border-radius: 50%;
             width: 7rem;
             height: 7rem;
             background-color: white;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             justify-content: center;
             
             i {
-                font-size: 6rem;
-                color: $light-blue;
+                font-size: 2.5rem;
+                color: $dark-blue;
             }
-        }
+        } */
 
         .btnText {
             font-weight: 400;
