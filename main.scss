@@ -1,3 +1,23 @@
+$light-green: #DCFADB;
+$light-purple: #DBE2FA;
+$light-yellow: #FAEFDB;
+$light-red: #FADBE2;
+$light-blue: #DBEFFA;
+$middle-green: #76E072;
+$middle-blue: #86A1FF;
+$middle-yellow: #FFC761;
+$middle-red: #FFBDCD;
+$grey: #78746D;
+$dark-blue: #449BC0;
+$dark-red: #FF7E7E;
+
+$font-color: #181945;
+
+@mixin margin-y($value) {
+    margin-top:    $value;
+    margin-bottom: $value;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -23,573 +43,192 @@ html {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
-$light-green: #DCFADB;
-$light-purple: #DBE2FA;
-$light-yellow: #FAEFDB;
-$light-red: #FADBE2;
-$light-blue: #DBEFFA;
-$middle-green: #76E072;
-$middle-blue: #86A1FF;
-$middle-yellow: #FFC761;
-$middle-red: #FFBDCD;
-$grey: #78746D;
-$dark-blue: #449BC0;
-$dark-red: #FF7E7E;
-
-.grid {
-    padding: 1.5rem 1.5rem 1.5rem 0rem;
-    padding-left: 0;
+.gridWrapper {
     display: grid;
-    grid-template-rows: 
-        minmax(10vh, 100px) repeat(2, minmax(200px,15vh)) minmax(200px, 20vh);
-    grid-template-columns: 
-        120px repeat(3, 1fr);
-    grid-gap: 3rem;
-    grid-template-areas: "sidebar cards     cards leftBar"
-                         "sidebar liPacient notes leftBar"
-                         "sidebar liPacient notes leftBar"
-                         "sidebar graph     graph leftBar";
-
-    @media only screen and (max-width: 900px) {
-        grid-template-columns: 
-            100px repeat(2, 1fr);
-            grid-gap: 15px;
-
-        grid-template-areas: "sidebar cards     leftBar"
-                             "sidebar liPacient leftBar"
-                             "sidebar notes     leftBar"
-                             "sidebar graph     leftBar";
-    }
-
-    @media only screen and (max-width: 800px) {
-        grid-template-columns: 
-            100px 1fr;
-        grid-template-rows: 
-            10vh repeat(4, 25vh);
-        grid-gap: 12.5px;
-
-        grid-template-areas: "sidebar cards"
-                             "sidebar leftBar"
-                             "sidebar liPacient"
-                             "sidebar notes"
-                             "sidebar graph";
-    }
-
-    @media only screen and (max-width: 500px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: 
-            25vh 210px repeat(4, 35vh);
-        grid-template-areas: "sidebar"
-                             "cards"
-                             "leftBar"
-                             "liPacient"
-                             "notes"
-                             "graph";
-
-                             
-    }   
-}
-
-.sidebar,
-.cards,
-.liPacient,
-.graph,
-.notes,
-.leftBar {
-    border-radius: 16px;
+    grid-template-columns: [sidebar-start] 250px [sidebar-end main-start] calc(100vw - 250px) [main-end];
+    grid-template-rows: 100vh;
 }
 
 
 .sidebar {
-    grid-area: sidebar;
-    background-color: $light-blue;
-    border-radius: 0 16px 16px 0;
-    min-height: 100.5vh;
-    transform: translateY(-1.1%);
-    
+    grid-column: sidebar-start / sidebar-end;
+    background-color: $dark-blue;
+    grid-row: 1 / -1;
 
-    .circle {
-        margin: 0 auto;
-        margin-top: 2rem;
-        border-radius: 50%;
-        width: 7.5rem;
-        height: 7.5rem;
-        background-color: white;
-        padding: 0rem;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        overflow: hidden;
-        
-        img {
-            height: 100%;
-            width: auto;
-        }
-    }
-}
-
-.cards {
-    grid-area: cards;
-    margin-top: 1rem;
+    padding: 4rem 4rem;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5em;
 
-    .card {
-        border-radius: 1.6rem;
-        &1 {
-            background-color: $light-green;
-            i {color: $middle-green;}
-        }
-        &2 {
-            background-color: $light-purple;
-            i {color: $middle-blue;}
-        }
-        &3 {
-            background-color: $light-yellow;
-            i {color: $middle-yellow;}
-        }
-        &4 {
-            background-color: $light-red;
-            i {color: $middle-red;}
-        }
-
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-
-    @media only screen and (max-width: 500px) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, minmax(10vh,100px));
-    }
-
-    .square {
-        border-radius: 9px;
-        width:  6rem;
-        height: 6rem;
-        background-color: white;
+    .logo {
         display: flex;
         align-items: center;
-        justify-content: center;
+        font-size: 2.4rem;
+        font-weight: 800;
+        color: white;
+        align-self: flex-start;
 
-        i {
-            font-size: 2.5rem;
+        img {
+            margin-right: 1rem;
         }
     }
 
-    .desc {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
+    .nav {
+        ul {
+            list-style: none;
+        }
 
-        .number {
-            font-size: 3.2rem;
-            color: black;
-            font-weight: 500;   
+        .navitem {
+            color: white;
+            font-weight: 600;
+            font-size: 1.8rem;
         }
         
-        .title {
-            color: $grey;
-            font-size: 1.2rem;
-            font-weight: 500;
+        .navlink {
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .line {
+            border: 0;
+            height: 1.5px;
+            background: #E3E3E3;
+            width: 130%;
+            @include margin-y(1.5rem)
         }
     }
-}
 
-.liPacient {
-    grid-area: liPacient;
-    background-color: white;
-    padding-right: 1rem;
-    
-    .pacientWrapper {
-        overflow-Y: auto;
-        height: 80%;
-        padding-bottom: .5rem;
-        padding-right: 1rem;
-
-          /* Chrome, Edge, and Safari */
-            &::-webkit-scrollbar {
-                width: 6px;
-            }
-
-            &::-webkit-scrollbar-track {
-                background: #dedede;
-            }
-
-            &::-webkit-scrollbar-thumb {
-                background-color: #99bfcf;
-                border-radius: 7px;
-                border: 0px solid #ffffff;
-            }
-    }
-
-    .h2 {
-        font-weight: 700;
-        font-size: 1.6rem;
-        color: $grey;
-        margin-bottom: 2rem;
-        padding: 2.5%;
-        padding-top: 5%;
-        margin-left: 1.5rem;
-    }
-
-    .pacient {
-        width: 95%;
-        background-color: $light-blue;
-        margin: 0 2.5%;
-        border-radius: 16px;
+    .logout {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        min-height: 10rem;
-        margin-bottom: 1.5rem;
-        padding: 1.5rem;
+        align-self: flex-end;
+
+        border: none;
+        background-color: #00000000;
+        width: min-content;
+        height: min-content;
+
+        cursor: pointer;
         
-        .wrapper {
-            display: flex;
-            align-items: center;
-
-            .circle {
-                width: 5rem;
-                height: 5rem;
-                border-radius: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: flex-end;
-                background-color: white;
-    
-                i {
-                    font-size: 4rem;
-                    color: $light-blue;
-                }
-            }
-    
-            .name {
-                margin-left: 1.5rem;
-                font-weight: 700;
-                font-size: 1.6rem;
-                color: $grey;
-            }
+        img {
+            margin-right: 1rem;
         }
-
-
-        .btn {
-            border: 2px solid $dark-blue;
-            border-radius: 50%;
-            width:  2.4rem;
-            height: 2.4rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgb(0, 0, 0, 0);
-            cursor: pointer;
-            padding: 1.2rem;
-
-            .dots {
-                color: $dark-blue;
-                font-size: 2rem;
-                transform: translateY(-20%);
-            }
-        }
+        color: white;
+        font-size: 2rem;
+        font-weight: 600;
     }
 }
 
-.graph {
-    grid-area: graph;
-    
-    background-image: url('../grafic.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+.main {
+    grid-column: main-start / main-end;
+    grid-row: 1 / -1;
+    padding: 4rem;
 
-.notes {
-    grid-area: notes;
-    background-color: $light-blue;
-    padding-right: 1rem;
-    .h2 {
-        font-weight: 700;
-        font-size: 1.6rem;
-        color: $grey;
-        margin-bottom: 2rem;
-        padding: 2.5%;
-        padding-top: 5%;
-        margin-left: 1.5rem;
+    display: grid;
+    grid-template-rows: [welcome-start] 8.5vh [welcome-end infos-start] 72.5vh [infos-end];
+    gap: 10vh;
+
+    .welcome {
+        grid-row: welcome-start / welcome-end;
+        .h1 {
+            font-weight: 700;
+            font-size: 3.4rem;
+            color: $font-color;
+        }
+
+        .highlight {
+            color: $dark-blue;
+        }
+
+        
+        padding-bottom: 2   rem;
+        border-bottom: 1px solid #D9D9D9;
     }
 
-    .notesWrapper {
-        overflow-Y: auto;
-        max-height: 75%;
-        padding-bottom: .5rem;
-        padding-right: 1rem;
+    section.infos {
+        grid-row: infos-start / infos-end;
+        display: grid;
+        grid-template-columns: 70% 25%;
+        grid-template-rows: 100%;
+        gap: 5%;
+        .h1 {
+            font-weight: 700;
+            font-size: 3.4rem;
+            color: $font-color;
+        }
 
+        .patients {
+            // background-color: $middle-green;
+            grid-column: 1 / 2;
+            grid-row: 1 / -1;
 
-  /* Chrome, Edge, and Safari */
-    &::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    &::-webkit-scrollbar-track {
-        background: #dedede;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        background-color: #99bfcf;
-        border-radius: 7px;
-        border: 0px solid #ffffff;
-    }
-
-        .note {
-            background-color: white;
-            border-left: 15px solid $dark-red;
-            
-            width: 95%;
-            margin: 0 2.5%;
-            border-radius: 16px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            min-height: 10rem;
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-
-            min-height: 8rem;
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            
-            .wrapper {
+            .form {
+                margin-top: 2.5rem;
+                margin-bottom: 2rem;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                width: 100%;
-                .title {
-                    font-weight: 700;
-                    font-size: 1.6rem;
-                    color: $grey;
-                    position: relative;
 
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        bottom: -25%;
-                        left: 0;
-                        width: 200%;
-                        height: .5px;
-                        background-color: $grey;
-                        align-self: flex-start;
-
-                        background: #D9D9D9;
-                        border-radius: 107px;
-                    }
-                }
-
-                .btn {
-                    border: 2px solid $dark-blue;
-                    border-radius: 50%;
-                    width:  2.4rem;
-                    height: 2.4rem;
+                .inputWrapper {
                     display: flex;
                     align-items: center;
-                    justify-content: center;
-                    background: rgb(0, 0, 0, 0);
+                }
+
+                .input {
+                    background: #FFFFFF;
+                    border: 2px solid #666666;
+                    border-radius: 16px;
+                    min-width: 35rem;
+                    padding: 1.25rem 1.25rem;
+                    font-size: 1.5rem;
+                    margin-right: 1rem;
+
+                    &:focus {
+                        outline: none !important;
+                    }
+                }
+
+                .btnSubmit {
+                    border: none;
+                    border-radius: 6px;
+                    background-color: $dark-blue;
+                    padding: 1.5rem;
                     cursor: pointer;
-                    padding: 1.2rem;
-        
-                    .dots {
-                        color: $dark-blue;
-                        font-size: 2rem;
-                        transform: translateY(-20%);
-                    }
+
+                    &:focus {outline: none;}
                 }
+
+                .btnAdd {
+                    
+                    border: none;
+                    border-radius: 6px;
+                    background-color: $dark-blue;
+                    padding: 1.3rem;
+                    cursor: pointer;
+
+                    color: white;
+                    font-weight: 500;
+                    font-size: 1.5rem;
+                    float: right;
+
+                    &:focus {outline: none;}
+                }
+
             }
-
-            /* .line {width: 50%; height: .5px; background-color: $grey; align-self: flex-start;} */
-
-            .desc {
-                font-size: 1.6rem;
-                font-weight: 700;
-                color: $grey;
-                text-align: center;
-                padding-top: 1rem;
+            nav {
+                margin-top: 5rem;
             }
         }
-    }
+        
+        .myprofile {
+            background-color: $dark-red;
+            grid-column: 2 / 3;
+            grid-row: 1 / -1;
+        }
 
+
+    }
 }
 
-.leftBar {
-    grid-area: leftBar;
-    background-color: $light-blue;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    //justify-content: center;
-
-    .h2 {
-        font-weight: 700;
-        font-size: 1.6rem;
-        color: $grey;
-        margin-bottom: 2rem;
-        padding: 2.5%;
-        padding-top: 5%;
-        width: 85%;
-    }
-
-    .wrapperSection {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        height: 90%;
-
-        justify-content: space-around;
-    }
-
-    .calender {
-        width: 85%;
-        min-height: 28.5rem;
-        background: #FFFFFF;
-        border-radius: 24px;
-    
-        background-image: url('../calendario.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .events {
-        overflow-Y: auto;
-        width: 87.5%;
-        max-height: 25%;
-        padding-bottom: .5rem;
-        padding-right: 1rem;
-
-        &::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: #dedede;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: #99bfcf;
-            border-radius: 7px;
-            border: 0px solid #ffffff;
-        }
-
-        .event {
-            background-color: white;
-            border-left: 15px solid $dark-red;
-            
-            width: 95%;
-            margin: 0 2.5%;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-height: 8rem;
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-
-            min-height: 10rem;
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-
-            .wrapperDesc {
-                display: flex;
-                align-items: left;
-                // justify-content: space-between;
-                flex-direction: column;
-                // justify-content: space-between;
-                width: 100%;
-
-                .title {
-                    font-weight: 700;
-                    font-size: 1.6rem;
-                    color: $grey;
-                    position: relative;
-
-                    &::after {
-                        content: "";
-                        position: absolute;
-                        bottom: -25%;
-                        left: 0;
-                        width: 50%;
-                        height: .5px;
-                        background-color: $grey;
-                        align-self: flex-start;
-
-                        background: #D9D9D9;
-                        border-radius: 107px;
-                    }
-                }             
-
-                .desc {
-                    font-size: 1.6rem;
-                    font-weight: 700;
-                    color: $grey;
-                    text-align: left;
-                    padding-top: 1rem;
-                    word-break: break-word;
-                }
-            }
-
-            .wrapperDate {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                .date, .dateNumber {
-                    font-weight: 700;
-                    font-size: 2rem;
-                    color: $grey;
-                }
-            }
-
-        }
-    }
-
-    .newProgram {
-        background-color: $dark-blue;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        
-        justify-content: space-between;
-        padding: 1.5rem 2rem;
-        border-radius: 16px;
-        border: none;
-        width:  max-content;
-
-        /* .circle {
-            margin: 0 auto;
-            border-radius: 50%;
-            width: 7rem;
-            height: 7rem;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-            i {
-                font-size: 2.5rem;
-                color: $dark-blue;
-            }
-        } */
-
-        .btnText {
-            font-weight: 400;
-            font-size: 2.5rem;
-            text-align: center;
-            color: #FFFFFF;
-            word-break: break-all;
-            margin-left: 1rem;
-        }
-    }
-}

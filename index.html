@@ -4,435 +4,196 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
     <link rel="stylesheet" href="style/main.css">
-    <title>Grid</title>
+    <title>Phonos - Dashboard</title>
 </head>
 <body>
-    <div class="grid">
+    <div class="gridWrapper">
         <div class="sidebar">
-            <div class="circle">
-                <img src="./anya 2.jpg" alt="anya">
+            <div class="logo">
+                <img src="images/logo.svg" alt="phonos" class="logo">
+                Phonos.
             </div>
+            <nav class="nav">
+                <ul>
+                    <a href="#" class="navlink">
+                        <li class="navitem">Home</li>
+                    </a>
+                    <div class="line"></div>
+                    <a href="#" class="navlink">
+                        <li class="navitem">Joguinhos</li>
+                    </a>
+                    <div class="line"></div>
+                    <a href="#" class="navlink">
+                        <li class="navitem">Video Chamada</li>
+                    </a>
+                </ul>
+            </nav>
+            <button class="logout">
+                <img src="./images/logout.svg" alt="logout">
+                Sair
+            </button>
         </div>
-        <div class="cards">
-            <div class="card card1">
-                <div class="square">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-                <div class="desc">
-                    <p class="title">Pacientes</p>
-                    <h3 class="number">35</h3>
-                </div>
+        <main class="main">
+            <div class="welcome">
+                <h1 class="h1">Bem vindo(a),<span class="highlight"> Megumi David</span> </h1>
             </div>
-            <div class="card card2">
-                <div class="square">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-                <div class="desc">
-                    <p class="title">Pacientes</p>
-                    <h3 class="number">35</h3>
-                </div>
-            </div>
-            <div class="card card3">
-                <div class="square">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-                <div class="desc">
-                    <p class="title">Pacientes</p>
-                    <h3 class="number">35</h3>
-                </div>
-            </div>
-            <div class="card card4">
-                <div class="square">
-                    <i class="fa-solid fa-users"></i>
-                </div>
-                <div class="desc">
-                    <p class="title">Pacientes</p>
-                    <h3 class="number">35</h3>
-                </div>
-            </div>
-        </div>
-        <div class="liPacient">
-            <h2 class="h2">Lista de Paciente</h2>
-            <div class="pacientWrapper">
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-                <div class="pacient">
-                    <div class="wrapper">
-                        <div class="circle">
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <p class="name">David Paciente</p>
-                    </div>
-                    <button class="btn">
-                        <p class="dots">...</p>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="notes">
-            <h2 class="h2">Anotações</h2>
-            <div class="notesWrapper">
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
-                <div class="note">
-                    <div class="wrapper">
-                        <h3 class="title">Anotação 1</h3>
-                        <button class="btn">
-                            <p class="dots">...</p>
-                        </button>
-                    </div>
-                    <!-- <div class="line"></div> -->
-                    <p class="desc">David evento com David
-                        cliente.</p>
-                </div>
 
-            </div>
-        </div>
-        <div class="graph">
-            
-        </div>
-        <div class="leftBar">
-            <h2 class="h2">Calendário</h2>
-            <div class="wrapperSection">
-                <div class="calender">
-                    
+            <section class="infos">
+                <div class="patients">
+                    <h1 class="h1">Pacientes</h1>
+                    <div class="form">
+                        <div class="inputWrapper">
+                            <input type="text" class="input" id="iconified" placeholder="procurar paciente"/>
+                            <button class="btnSubmit">
+                                <img src="./images/search.svg" alt="search">
+                            </button>
+                        </div>
+                        <button class="btnAdd">
+                            + Pacientes
+                        </button>
+                    </div>
+
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
+ 
+                        </tbody>
+                    </table>
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                          <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#">2</a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                          </li>
+                        </ul>
+                      </nav>
                 </div>
-                <div class="events">
-                    <div class="event">
-                        <div class="wrapperDesc">
-                            <h2 class="title">Evento 1</h3>
-                            <p class="desc">David evento com David
-                                cliente.</p>
-                        </div>
-                        <div class="wrapperDate">
-                            <p class="date">Dia</p>
-                            <p class="dateNumber">26/02</p>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="wrapperDesc">
-                            <h2 class="title">Evento 1</h3>
-                            <p class="desc">David evento com David
-                                cliente.</p>
-                        </div>
-                        <div class="wrapperDate">
-                            <p class="date">Dia</p>
-                            <p class="dateNumber">26/02</p>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="wrapperDesc">
-                            <h2 class="title">Evento 1</h3>
-                            <p class="desc">David evento com David
-                                cliente.</p>
-                        </div>
-                        <div class="wrapperDate">
-                            <p class="date">Dia</p>
-                            <p class="dateNumber">26/02</p>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="wrapperDesc">
-                            <h2 class="title">Evento 1</h3>
-                            <p class="desc">David evento com David
-                                cliente.</p>
-                        </div>
-                        <div class="wrapperDate">
-                            <p class="date">Dia</p>
-                            <p class="dateNumber">26/02</p>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="wrapperDesc">
-                            <h2 class="title">Evento 1</h3>
-                            <p class="desc">David evento com David
-                                cliente.</p>
-                        </div>
-                        <div class="wrapperDate">
-                            <p class="date">Dia</p>
-                            <p class="dateNumber">26/02</p>
-                        </div>
-                    </div>
-                    <div class="event">
-                        <div class="wrapperDesc">
-                            <h2 class="title">Evento 1</h3>
-                            <p class="desc">David evento com David
-                                cliente.</p>
-                        </div>
-                        <div class="wrapperDate">
-                            <p class="date">Dia</p>
-                            <p class="dateNumber">26/02</p>
-                        </div>
-                    </div>
-                </div>
-                <button class="newProgram">
-                    <!-- <div class="circle"><i class="fa-regular fa-calendar-days"></i></div> -->
-                    <p class="btnText">Novo evento</p>
-                </button>
-            </div>
-        </div>
+                <div class="myprofile"></div>
+            </section>
+        </main>
     </div>
     <script src="https://kit.fontawesome.com/8bc26bac35.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
