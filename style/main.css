@@ -30,10 +30,27 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+@media only screen and (min-width: 1781px) {
+  .hideBg {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1780px) {
+  .hideSm {
+    display: none;
+  }
+}
+
 .gridWrapper {
   display: grid;
   grid-template-columns: [sidebar-start] 250px [sidebar-end main-start] calc(100vw - 250px) [main-end];
   grid-template-rows: 100vh;
+}
+@media only screen and (max-width: 1780px) {
+  .gridWrapper {
+    grid-template-columns: [sidebar-start] 90px [sidebar-end main-start] calc(100vw - 90px) [main-end];
+  }
 }
 
 .sidebar {
@@ -42,6 +59,14 @@ body {
   grid-row: 1/-1;
   padding: 4rem 4rem;
   display: grid;
+}
+@media only screen and (max-width: 1780px) {
+  .sidebar {
+    padding: 4rem 2rem;
+  }
+  .sidebar img {
+    margin-right: 0rem;
+  }
 }
 .sidebar .logo {
   display: flex;
@@ -66,9 +91,26 @@ body {
 .sidebar .nav .navitem:hover {
   background-color: rgba(68, 155, 192, 0.7294117647);
 }
+@media only screen and (max-width: 1780px) {
+  .sidebar .nav .navitem {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .sidebar .nav .navitem i {
+    font-size: 2.5rem;
+  }
+  .sidebar .nav .navitem i:hover {
+    color: rgba(255, 255, 255, 0.773);
+  }
+}
 .sidebar .nav .navlink {
   width: 100%;
   text-decoration: none;
+}
+@media only screen and (max-width: 1780px) {
+  .sidebar .nav .navlink {
+    text-align: center;
+  }
 }
 .sidebar .nav .line {
   border: 0;
@@ -108,13 +150,16 @@ body {
   grid-row: 1/-1;
   padding: 4rem;
   display: grid;
-  grid-template-rows: [welcome-start] 8.5vh [welcome-end infos-start] 72.5vh [infos-end];
-  gap: 10vh;
+  grid-template-rows: [welcome-start] 126px [welcome-end infos-start] 750px [infos-end];
+  gap: 100px;
+}
+@media only screen and (max-width: 1780px) {
+  .main {
+    padding: 3rem;
+  }
 }
 .main .topbar {
   grid-row: welcome-start/welcome-end;
-  padding-bottom: 2 rem;
-  border-bottom: 1px solid #D9D9D9;
 }
 .main .topbar .h1 {
   font-weight: 700;
@@ -124,11 +169,17 @@ body {
 .main .topbar .highlight {
   color: #449BC0;
 }
+.main .topbar .line {
+  margin-top: 4rem;
+  height: 1.5px;
+  background: #f1f1f1;
+  width: 100%;
+}
 .main section.infos {
-  grid-row: infos-start/infos-end;
   display: grid;
-  grid-template-columns: 70% 25%;
-  gap: 5%;
+  grid-row: infos-start/infos-end;
+  grid-template-columns: 74.5% 23.5%;
+  gap: 4rem;
 }
 .main section.infos .h1 {
   font-weight: 700;
@@ -136,8 +187,8 @@ body {
   color: #181945;
 }
 .main section.infos .patients {
-  grid-column: 1/2;
   display: grid;
+  grid-column: 1/2;
 }
 .main section.infos .patients .form {
   margin-top: 2.5rem;
@@ -204,7 +255,6 @@ body {
 }
 .main section.infos .patients table {
   width: 400px;
-  height: 100%;
   height: 90%;
 }
 .main section.infos .patients table {
@@ -232,7 +282,7 @@ body {
 .main section.infos .patients table tbody {
   display: block;
   height: 100%;
-  overflow: auto;
+  overflow: scroll;
   height: 50vh;
   width: 100%;
 }
@@ -247,7 +297,7 @@ body {
   color: #52575C;
 }
 .main section.infos .patients table tbody th img {
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 .main section.infos .patients table tbody th.action {
   text-align: center;
@@ -262,8 +312,8 @@ body {
 }
 .main section.infos .myprofile {
   grid-column: 2/3;
-  grid-row: 1/-1;
-  margin-top: 10.5rem;
+  margin-top: 6.5rem;
+  width: 100%;
 }
 .main section.infos .myprofile .h1 {
   font-weight: 700;
@@ -335,7 +385,7 @@ body {
   transform: translateY(-5%);
 }
 .gameSection .form {
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -395,18 +445,20 @@ body {
 }
 .gameSection .games .game {
   background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   border-radius: 16px;
   min-height: 50rem;
 }
 .gameSection .games .game .imgBox {
   width: 100%;
   height: 60%;
-  /* &1 {background-image: url('../images/joguinhos1.png');}
-  &2 {background-image: url('../images/joguinhos2.png');}
-  &3 {background-image: url('../images/joguinhos3.png');}
-  background-size: cover;
-  background-repeat: no-repeat; */
+  /* 
+      &1 {background-image: url('../images/joguinhos1.png');}
+      &2 {background-image: url('../images/joguinhos2.png');}
+      &3 {background-image: url('../images/joguinhos3.png');}
+      background-size: cover;
+      background-repeat: no-repeat; 
+  */
 }
 .gameSection .games .game .imgBox img {
   width: 100%;
@@ -437,6 +489,7 @@ body {
   background-color: #449BC0;
   padding: 1rem 3rem;
   cursor: pointer;
+  text-decoration: none;
   color: white;
   font-weight: 500;
   font-size: 1.2rem;
@@ -450,4 +503,26 @@ body {
 }
 .gameSection .games .game .text .btnPlay:hover {
   background-color: rgba(68, 155, 192, 0.7294117647);
+}
+
+.thisgame {
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+}
+.thisgame .h1 {
+  font-weight: 700;
+  font-size: 3.4rem;
+  color: #181945;
+}
+.thisgame .gamebox {
+  width: 100%;
+  height: 80vh;
+  margin: 8vh 0;
+  border-radius: 16px;
+  background-color: #CFCFCF;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }/*# sourceMappingURL=main.css.map */
