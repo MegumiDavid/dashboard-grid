@@ -15,269 +15,309 @@
     <link rel="stylesheet" href="style/main.css">
     <title>Phonos - Dashboard</title>
 </head>
-<body>
-    <div class="gridWrapper">
-        <div class="sidebar">
-            <div class="logo">
-                <img src="images/logo.svg" alt="phonos" class="logo">
-                <div class="hideSm">Phonos.</div>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <a href="/" class="navlink">
-                        <li class="navitem hideSm">Home</li>
-                        <li class="navitem hideBg">
-                            <i class="fa-solid fa-house"></i>
-                        </li>
-                    </a>
-                    <div class="line hideSm"></div>
-                    <a href="/joguinhos.html" class="navlink">
-                        <li class="navitem hideSm">Joguinhos</li>
-                        <li class="navitem hideBg">
-                            <i class="fa-solid fa-gamepad"></i>
-                        </li>
-                    </a>
-                    <div class="line hideSm"></div>
-                    <a href="#" class="navlink">
-                        <li class="navitem hideSm">Video Chamada</li>
-                        <li class="navitem hideBg">
-                            <i class="fa-solid fa-video"></i>
-                        </li>
-                    </a>
-                </ul>
-            </nav>
-            <button class="logout">
-                <img src="./images/logout.svg" alt="logout">
-                <div class="hideSm">
-                    Sair
-                <div/>
+<body class="body">
+    <div class="addPatient">
+        <div class="closeSection">
+            <button>
+                <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
-        <main class="main">
-            <div class="topbar">
-                <h1 class="h1">Bem vindo(a),<span class="highlight"> Megumi David</span> </h1>
-                <div class="line"></div>
+        <div class="imgWrap">
+            <div class="circle">
+                <img src="./images/anonimous-profile.png" alt="profile">
             </div>
-
-            <section class="infos">
-                <div class="patients">
-                    <h1 class="h1">Pacientes</h1>
-                    <div class="form">
-                        <div class="inputWrapper">
-                            <input type="text" class="input" id="iconified" placeholder="procurar paciente"/>
-                            <button class="btnSubmit">
-                                <img src="./images/search.svg" alt="search">
+        </div>
+        <form class="info">
+            <div class="data">
+                <div class="wrap">
+                    <p class="label">Nome</p>
+                    <input type="text" class="input" id="iconified" />
+                </div>
+            </div>
+            <div class="data">
+                <div class="wrap">
+                    <p class="label">Data nascimento</p>
+                    <input type="date" class="input" id="iconified" />
+                </div>
+            </div>
+            <div class="data">
+                <div class="wrap">
+                    <p class="label">Principal defiencia</p>
+                    <input type="text" class="input" id="iconified" />
+                </div>
+            </div>
+            <div class="btnSection">
+                <button type="submit" class="submitPacient">
+                    Criar
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="darkbg">
+        <div class="gridWrapper">
+            <div class="sidebar">
+                <div class="logo">
+                    <img src="images/logo.svg" alt="phonos" class="logo">
+                    <div class="hideSm">Phonos.</div>
+                </div>
+                <nav class="nav">
+                    <ul>
+                        <a href="/" class="navlink">
+                            <li class="navitem hideSm">Home</li>
+                            <li class="navitem hideBg">
+                                <i class="fa-solid fa-house"></i>
+                            </li>
+                        </a>
+                        <div class="line hideSm"></div>
+                        <a href="/joguinhos.html" class="navlink">
+                            <li class="navitem hideSm">Joguinhos</li>
+                            <li class="navitem hideBg">
+                                <i class="fa-solid fa-gamepad"></i>
+                            </li>
+                        </a>
+                        <div class="line hideSm"></div>
+                        <a href="#" class="navlink">
+                            <li class="navitem hideSm">Video Chamada</li>
+                            <li class="navitem hideBg">
+                                <i class="fa-solid fa-video"></i>
+                            </li>
+                        </a>
+                    </ul>
+                </nav>
+                <button class="logout">
+                    <img src="./images/logout.svg" alt="logout">
+                    <div class="hideSm">
+                        Sair
+                    <div/>
+                </button>
+            </div>
+            <main class="main">
+                <div class="topbar">
+                    <h1 class="h1">Bem vindo(a),<span class="highlight"> Megumi David</span> </h1>
+                    <div class="line"></div>
+                </div>
+                <section class="infos">
+                    <div class="patients">
+                        <h1 class="h1">Pacientes</h1>
+                        <div class="form">
+                            <div class="inputWrapper">
+                                <input type="text" class="input" id="iconified" placeholder="procurar paciente"/>
+                                <button class="btnSubmit">
+                                    <img src="./images/search.svg" alt="search">
+                                </button>
+                            </div>
+                            <button class="btnAdd">
+                                + Pacientes
                             </button>
                         </div>
-                        <button class="btnAdd">
-                            + Pacientes
-                        </button>
+                        <table class="table">
+                            <thead class="thead">
+                                <td class="first">Nome</td>
+                                <td>Token</td>
+                                <td>Nascimento</td>
+                                <td>Condição</td>
+                                <td class="actionTitle">Action</td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <img src="./images/profile-ex.png" alt="profile">
+                                        Leslie Alexander
+                                    </th>
+                                    <th>12345</th>
+                                    <th>10/10/2020</th>
+                                    <th>Falta atenção</th>
+                                    <th class="action">
+                                        <button>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <img src="./images/profile-ex.png" alt="profile">
+                                        Leslie Alexander
+                                    </th>
+                                    <th>12345</th>
+                                    <th>10/10/2020</th>
+                                    <th>Falta atenção</th>
+                                    <th class="action">
+                                        <button>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <img src="./images/profile-ex.png" alt="profile">
+                                        Leslie Alexander
+                                    </th>
+                                    <th>12345</th>
+                                    <th>10/10/2020</th>
+                                    <th>Falta atenção</th>
+                                    <th class="action">
+                                        <button>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <img src="./images/profile-ex.png" alt="profile">
+                                        Leslie Alexander
+                                    </th>
+                                    <th>12345</th>
+                                    <th>10/10/2020</th>
+                                    <th>Falta atenção</th>
+                                    <th class="action">
+                                        <button>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <img src="./images/profile-ex.png" alt="profile">
+                                        Leslie Alexander
+                                    </th>
+                                    <th>12345</th>
+                                    <th>10/10/2020</th>
+                                    <th>Falta atenção</th>
+                                    <th class="action">
+                                        <button>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <img src="./images/profile-ex.png" alt="profile">
+                                        Leslie Alexander
+                                    </th>
+                                    <th>12345</th>
+                                    <th>10/10/2020</th>
+                                    <th>Falta atenção</th>
+                                    <th class="action">
+                                        <button>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <img src="./images/profile-ex.png" alt="profile">
+                                        Leslie Alexander
+                                    </th>
+                                    <th>12345</th>
+                                    <th>10/10/2020</th>
+                                    <th>Falta atenção</th>
+                                    <th class="action">
+                                        <button>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <img src="./images/profile-ex.png" alt="profile">
+                                        Leslie Alexander
+                                    </th>
+                                    <th>12345</th>
+                                    <th>10/10/2020</th>
+                                    <th>Falta atenção</th>
+                                    <th class="action">
+                                        <button>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <img src="./images/profile-ex.png" alt="profile">
+                                        Leslie Alexander
+                                    </th>
+                                    <th>12345</th>
+                                    <th>10/10/2020</th>
+                                    <th>Falta atenção</th>
+                                    <th class="action">
+                                        <button>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <img src="./images/profile-ex.png" alt="profile">
+                                        Leslie Alexander
+                                    </th>
+                                    <th>12345</th>
+                                    <th>10/10/2020</th>
+                                    <th>Falta atenção</th>
+                                    <th class="action">
+                                        <button>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <img src="./images/profile-ex.png" alt="profile">
+                                        Leslie Alexander
+                                    </th>
+                                    <th>12345</th>
+                                    <th>10/10/2020</th>
+                                    <th>Falta atenção</th>
+                                    <th class="action">
+                                        <button>
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                        </button>
+                                    </th>
+                                </tr>
+        
+                            </tbody>
+                        </table>
                     </div>
-
-                    <table class="table">
-                        <thead class="thead">
-                            <td class="first">Nome</td>
-                            <td>Token</td>
-                            <td>Nascimento</td>
-                            <td>Condição</td>
-                            <td class="actionTitle">Action</td>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>
-                                    <img src="./images/profile-ex.png" alt="profile">
-                                    Leslie Alexander
-                                </th>
-                                <th>12345</th>
-                                <th>10/10/2020</th>
-                                <th>Falta atenção</th>
-                                <th class="action">
-                                    <button>
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/profile-ex.png" alt="profile">
-                                    Leslie Alexander
-                                </th>
-                                <th>12345</th>
-                                <th>10/10/2020</th>
-                                <th>Falta atenção</th>
-                                <th class="action">
-                                    <button>
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/profile-ex.png" alt="profile">
-                                    Leslie Alexander
-                                </th>
-                                <th>12345</th>
-                                <th>10/10/2020</th>
-                                <th>Falta atenção</th>
-                                <th class="action">
-                                    <button>
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/profile-ex.png" alt="profile">
-                                    Leslie Alexander
-                                </th>
-                                <th>12345</th>
-                                <th>10/10/2020</th>
-                                <th>Falta atenção</th>
-                                <th class="action">
-                                    <button>
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/profile-ex.png" alt="profile">
-                                    Leslie Alexander
-                                </th>
-                                <th>12345</th>
-                                <th>10/10/2020</th>
-                                <th>Falta atenção</th>
-                                <th class="action">
-                                    <button>
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/profile-ex.png" alt="profile">
-                                    Leslie Alexander
-                                </th>
-                                <th>12345</th>
-                                <th>10/10/2020</th>
-                                <th>Falta atenção</th>
-                                <th class="action">
-                                    <button>
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/profile-ex.png" alt="profile">
-                                    Leslie Alexander
-                                </th>
-                                <th>12345</th>
-                                <th>10/10/2020</th>
-                                <th>Falta atenção</th>
-                                <th class="action">
-                                    <button>
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/profile-ex.png" alt="profile">
-                                    Leslie Alexander
-                                </th>
-                                <th>12345</th>
-                                <th>10/10/2020</th>
-                                <th>Falta atenção</th>
-                                <th class="action">
-                                    <button>
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/profile-ex.png" alt="profile">
-                                    Leslie Alexander
-                                </th>
-                                <th>12345</th>
-                                <th>10/10/2020</th>
-                                <th>Falta atenção</th>
-                                <th class="action">
-                                    <button>
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/profile-ex.png" alt="profile">
-                                    Leslie Alexander
-                                </th>
-                                <th>12345</th>
-                                <th>10/10/2020</th>
-                                <th>Falta atenção</th>
-                                <th class="action">
-                                    <button>
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </button>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    <img src="./images/profile-ex.png" alt="profile">
-                                    Leslie Alexander
-                                </th>
-                                <th>12345</th>
-                                <th>10/10/2020</th>
-                                <th>Falta atenção</th>
-                                <th class="action">
-                                    <button>
-                                        <i class="fa-regular fa-pen-to-square"></i>
-                                    </button>
-                                </th>
-                            </tr>
-                           
-                        </tbody>
-                    </table>
-                </div>
-                <div class="myprofile">
-                    <h1 class="h1">Meu Perfil</h1>
-                    <div class="box">
-                        <div class="imgWrap">
-                            <div class="circle">
-                                <img src="./images/profile.png" alt="profile">
-                            </div>
-                            <h3 class="name">Megumi David</h3>
-                        </div>
-                        <div class="info">
-                            <div class="data">
-                                <p class="label">Nome</p>
-                                <div class="wrap">
-                                    <p class="input">Megumi David</p>
-                                    <i class="fa-regular fa-pen-to-square"></i>
+                    <div class="myprofile">
+                        <h1 class="h1">Meu Perfil</h1>
+                        <div class="box">
+                            <div class="imgWrap">
+                                <div class="circle">
+                                    <img src="./images/profile.png" alt="profile">
                                 </div>
+                                <h3 class="name">Megumi David</h3>
                             </div>
-                            <div class="data">
-                                <p class="label">CRFA</p>
-                                <div class="wrap">
-                                    <p class="input">12345</p>
-                                    <i class="fa-regular fa-pen-to-square"></i>
+                            <div class="info">
+                                <div class="data">
+                                    <p class="label">Nome</p>
+                                    <div class="wrap">
+                                        <p class="input">Megumi David</p>
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="data">
-                                <p class="label">Email</p>
-                                <div class="wrap">
-                                    <p class="input">megumi@david.com</p>
-                                    <i class="fa-regular fa-pen-to-square"></i>
+                                <div class="data">
+                                    <p class="label">CRFA</p>
+                                    <div class="wrap">
+                                        <p class="input">12345</p>
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </div>
+                                </div>
+                                <div class="data">
+                                    <p class="label">Email</p>
+                                    <div class="wrap">
+                                        <p class="input">megumi@david.com</p>
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        </main>
+                </section>
+            </main>
+        </div>
     </div>
+
+    <script src="script.js"></script>
+
     <script src="https://kit.fontawesome.com/8bc26bac35.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
