@@ -61,10 +61,6 @@ body {
   color: white;
   font-weight: 600;
   font-size: 1.8rem;
-  transition: all 300ms ease;
-}
-.sidebar .nav .navitem:hover {
-  background-color: rgba(68, 155, 192, 0.7294117647);
 }
 .sidebar .nav .navlink {
   width: 100%;
@@ -94,13 +90,9 @@ body {
   color: white;
   font-size: 2rem;
   font-weight: 600;
-  transition: all 300ms ease;
 }
 .sidebar .logout img {
   margin-right: 1rem;
-}
-.sidebar .logout:hover {
-  color: rgba(255, 255, 255, 0.773);
 }
 
 .main {
@@ -169,13 +161,9 @@ body {
   background-color: #449BC0;
   padding: 1.5rem;
   cursor: pointer;
-  transition: all 300ms ease;
 }
 .main section.infos .patients .form .btnSubmit:focus {
   outline: none;
-}
-.main section.infos .patients .form .btnSubmit:hover {
-  background-color: rgba(68, 155, 192, 0.7294117647);
 }
 .main section.infos .patients .form .btnAdd {
   border: none;
@@ -187,76 +175,15 @@ body {
   font-weight: 500;
   font-size: 1.5rem;
   float: right;
-  transition: all 300ms ease;
 }
 .main section.infos .patients .form .btnAdd:focus {
   outline: none;
-}
-.main section.infos .patients .form .btnAdd:hover {
-  background-color: rgba(68, 155, 192, 0.7294117647);
 }
 .main section.infos .patients nav {
   margin-top: 5rem;
 }
 .main section.infos .myprofile {
+  background-color: #FF7E7E;
   grid-column: 2/3;
   grid-row: 1/-1;
-  margin-top: 6.5rem;
-}
-.main section.infos .myprofile .h1 {
-  font-weight: 700;
-  font-size: 3.4rem;
-  color: #181945;
-}
-.main section.infos .myprofile .box {
-  background-color: #DBEFFA;
-  border-radius: 32px;
-  margin-top: 2rem;
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
-  width: 100%;
-  padding: 3rem 3rem;
-}
-.main section.infos .myprofile .box .imgWrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-.main section.infos .myprofile .box .circle {
-  width: 10rem;
-  height: 10rem;
-  margin-bottom: 1rem;
-}
-.main section.infos .myprofile .box .circle img {
-  width: 100%;
-  height: auto;
-}
-.main section.infos .myprofile .box .name {
-  font-weight: 600;
-  font-size: 2.4rem;
-  color: #181945;
-}
-.main section.infos .myprofile .box .info .data .label {
-  font-weight: 600;
-  font-size: 1rem;
-  color: #666666;
-  margin-top: 0.1rem;
-}
-.main section.infos .myprofile .box .info .data .wrap {
-  display: flex;
-  justify-content: space-between;
-}
-.main section.infos .myprofile .box .info .data .wrap i {
-  color: #A0A4A8;
-  font-size: 1.4rem;
-  margin-top: -1rem;
-  cursor: pointer;
-}
-.main section.infos .myprofile .box .info .data .wrap .input {
-  font-weight: 600;
-  margin-top: -1rem;
-  font-size: 1.8rem;
-  color: #181945;
 }/*# sourceMappingURL=main.css.map */
