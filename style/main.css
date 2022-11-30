@@ -72,8 +72,8 @@ body {
 }
 .sidebar .nav .line {
   border: 0;
-  height: 1.4px;
-  background: #f1f1f1;
+  height: 1.5px;
+  background: #E3E3E3;
   width: 130%;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -251,14 +251,6 @@ body {
 }
 .main section.infos .patients table tbody th.action {
   text-align: center;
-}
-.main section.infos .patients table tbody th.action button {
-  border: none;
-  background: rgba(0, 0, 0, 0);
-  cursor: pointer;
-}
-.main section.infos .patients table tbody th.action button:focus {
-  outline: none;
 }
 .main section.infos .myprofile {
   grid-column: 2/3;

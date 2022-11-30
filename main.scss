@@ -96,8 +96,8 @@ body {
 
         .line {
             border: 0;
-            height: 1.4px;
-            background: #f1f1f1;
+            height: 1.5px;
+            background: #E3E3E3;
             width: 130%;
             @include margin-y(1.5rem)
         }
@@ -281,14 +281,6 @@ body {
     
                         &.action {
                             text-align: center;
-
-                            button {
-                                border: none;
-                                background: rgba(0, 0, 0, 0);
-                                cursor: pointer;
-
-                                &:focus {outline: none;}
-                            }
                         }
                     }
                 }
