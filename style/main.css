@@ -30,6 +30,10 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+table {
+  width: 100%;
+}
+
 .gridWrapper {
   display: grid;
   grid-template-columns: [sidebar-start] 250px [sidebar-end main-start] calc(100vw - 250px) [main-end];
@@ -128,6 +132,7 @@ body {
   grid-row: infos-start/infos-end;
   display: grid;
   grid-template-columns: 70% 25%;
+  grid-template-rows: 100%;
   gap: 5%;
 }
 .main section.infos .h1 {
@@ -137,7 +142,7 @@ body {
 }
 .main section.infos .patients {
   grid-column: 1/2;
-  display: grid;
+  grid-row: 1/-1;
 }
 .main section.infos .patients .form {
   margin-top: 2.5rem;
@@ -194,68 +199,13 @@ body {
 .main section.infos .patients .form .btnAdd:hover {
   background-color: rgba(68, 155, 192, 0.7294117647);
 }
-.main section.infos .patients thead, .main section.infos .patients tbody tr {
-  display: table;
-  width: 100%;
-  table-layout: fixed; /* even columns width , fix width of table too*/
-}
-.main section.infos .patients thead {
-  width: calc(100% - 0.01em);
-}
-.main section.infos .patients table {
-  width: 400px;
-  height: 100%;
-  height: 90%;
-}
-.main section.infos .patients table {
-  padding: 3rem;
-  border-radius: 16px;
-  box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
-  width: 100%;
-}
-.main section.infos .patients table thead {
-  font-weight: 700;
-  font-size: 1.4rem;
-  background-color: #FAFAFA;
-}
-.main section.infos .patients table thead .first {
-  border-radius: 16px 0px 0px 0px;
-}
-.main section.infos .patients table thead .actionTitle {
-  color: #FAFAFA;
-  border-radius: 0px 16px 0px 0px;
-}
-.main section.infos .patients table thead td {
-  padding: 2rem;
-  width: 100%;
-}
-.main section.infos .patients table tbody {
-  display: block;
-  height: 100%;
-  overflow: auto;
-  height: 50vh;
-  width: 100%;
-}
-.main section.infos .patients table tbody th {
-  height: -webkit-min-content;
-  height: -moz-min-content;
-  height: min-content;
-  padding: 2rem;
-  vertical-align: middle;
-  font-weight: 400;
-  font-size: 1.4rem;
-  color: #52575C;
-}
-.main section.infos .patients table tbody th img {
-  margin-right: 2rem;
-}
-.main section.infos .patients table tbody th.action {
-  text-align: center;
+.main section.infos .patients nav {
+  margin-top: 5rem;
 }
 .main section.infos .myprofile {
   grid-column: 2/3;
   grid-row: 1/-1;
-  margin-top: 10.5rem;
+  margin-top: 6.5rem;
 }
 .main section.infos .myprofile .h1 {
   font-weight: 700;
@@ -271,7 +221,6 @@ body {
   height: min-content;
   width: 100%;
   padding: 3rem 3rem;
-  padding-top: 4rem;
 }
 .main section.infos .myprofile .box .imgWrap {
   display: flex;
@@ -280,9 +229,9 @@ body {
   margin-bottom: 2rem;
 }
 .main section.infos .myprofile .box .circle {
-  width: 15rem;
-  height: 15rem;
-  margin-bottom: 3rem;
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 1rem;
 }
 .main section.infos .myprofile .box .circle img {
   width: 100%;
@@ -290,15 +239,9 @@ body {
 }
 .main section.infos .myprofile .box .name {
   font-weight: 600;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   color: #181945;
   text-align: center;
-}
-.main section.infos .myprofile .box .info {
-  padding: 2rem 0rem;
-}
-.main section.infos .myprofile .box .info .data {
-  padding: 0.5rem 0;
 }
 .main section.infos .myprofile .box .info .data .label {
   font-weight: 600;

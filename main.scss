@@ -46,6 +46,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+table {
+    width: 100%;
+}
+
 .gridWrapper {
     display: grid;
     grid-template-columns: [sidebar-start] 250px [sidebar-end main-start] calc(100vw - 250px) [main-end];
@@ -157,7 +161,7 @@ body {
         grid-row: infos-start / infos-end;
         display: grid;
         grid-template-columns: 70% 25%;
-        //grid-template-rows: 80vh;
+        grid-template-rows: 100%;
         gap: 5%;
         .h1 {
             font-weight: 700;
@@ -166,10 +170,10 @@ body {
         }
 
         .patients {
+            // background-color: $middle-green;
             grid-column: 1 / 2;
-            //grid-row: 1 / -1;
+            grid-row: 1 / -1;
 
-            display: grid;
             .form {
                 margin-top: 2.5rem;
                 margin-bottom: 2rem;
@@ -226,66 +230,8 @@ body {
                 }
 
             }
-            
-            thead, tbody tr {
-                display: table;
-                width: 100%;
-                table-layout: fixed;/* even columns width , fix width of table too*/
-            }
-            thead {
-                width: calc( 100% - .01em )/* scrollbar is average 1em/16px width, remove it from thead width */
-            }
-            table {
-                width: 400px;
-                height: 100%;
-                height: 90%;
-            }
-
-
-            table {
-                padding: 3rem;
-                border-radius: 16px;
-                box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
-                width: 100%;
-
-                thead {
-                    font-weight: 700;
-                    font-size: 1.4rem;
-                    background-color: #FAFAFA;
-                    
-                    .first {border-radius: 16px 0px 0px 0px;}
-                    .actionTitle {color: #FAFAFA;border-radius: 0px 16px 0px 0px;}
-
-                    td {
-                        padding: 2rem;
-                        width: 100%;
-                    }
-                }
-                
-                tbody {
-                    display: block;
-                    height: 100%;
-                    overflow: auto;
-                    height: 50vh;
-                    width: 100%;
-
-                    th {
-                        height: min-content;
-                        padding: 2rem;
-                        vertical-align: middle;
-                        font-weight: 400;
-                        font-size: 1.4rem;
-                        color: #52575C;
-    
-                        img {margin-right: 2rem;}
-    
-                        &.action {
-                            text-align: center;
-                        }
-                    }
-                }
-
-
+            nav {
+                margin-top: 5rem;
             }
         }
         
@@ -293,7 +239,7 @@ body {
             // background-color: $dark-red;
             grid-column: 2 / 3;
             grid-row: 1 / -1;
-            margin-top: 10.5rem ;
+            margin-top: 6.5rem ;
 
             .h1 {
                 font-weight: 700;
@@ -315,7 +261,6 @@ body {
                 // justify-content: space-between;
                 
                 padding: 3rem 3rem;
-                padding-top: 4rem;
 
                 .imgWrap {
                     display: flex;
@@ -326,9 +271,9 @@ body {
                 }
 
                 .circle {
-                    width:  15rem;
-                    height: 15rem;   
-                    margin-bottom: 3rem;
+                    width:  10rem;
+                    height: 10rem;   
+                    margin-bottom: 1rem;
                     img {
                         // border: 3px solid #449BC0;
                         width: 100%;
@@ -338,15 +283,15 @@ body {
 
                 .name {
                     font-weight: 600;
-                    font-size: 2.6rem;
+                    font-size: 2.4rem;
                     color: $font-color;
                     text-align: center;
                 }
 
                 .info {
-                    padding: 2rem 0rem;
+
                     .data {
-                        padding: .5rem 0;
+                        // width: min-content;
                         .label {
                             font-weight: 600;
                             font-size: 1rem;
